@@ -1,0 +1,85 @@
+<p-toast position="top-left"></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+<p-toolbar styleClass="p-mb-4">
+  <ng-template pTemplate="left">
+    <button pButton pRipple icon="pi pi-plus p-" class="p-button-success p-mr-2 ml-4 mb-lg-0 mb-3"
+      (click)="openNew()"></button> 
+    <button pButton pRipple icon="pi pi-trash" class="p-button-danger mb-lg-0 mb-3" (click)="deleteSelectedItems()"
+      [disabled]="!selectedItems || !selectedItems.length"></button>
+  </ng-template>
+
+  <ng-template pTemplate="right">
+    <p-splitButton label=" استخراج ملفات " icon="pi pi-sign-out" dir="rtl" [model]="items"></p-splitButton>
+  </ng-template>
+</p-toolbar>
+
+
+<p-table #dt [value]="tableData" dataKey="id" [rows]="5" [showCurrentPageReport]="true" [(selection)]="selectedItems"
+  [rowsPerPageOptions]="[10,25,50]" [loading]="loading" styleClass="p-datatable-gridlines" [paginator]="true"
+  currentPageReportTemplate="عرض {first} من {last} الي {totalRecords} عنصر"
+  [globalFilterFields]="['id','name','lastname','age']">
+  <ng-template pTemplate="caption">
+    <div class="p-d-flex">
+      <span class="p-input-icon-left p-ml-auto ">
+        <i class="pi pi-search"></i>
+        <input pInputText type="text" (input)="dt.filterGlobal($any($event).target.value, 'contains')"
+          placeholder="بحث"  class="w-100"/>
+      </span>
+      <button pButton label="حذف" class="p-button-outlined mr-md-3 w-sm-25  mt-3"  icon="pi pi-filter-slash"
+        (click)="clear(dt)"></button>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <!-- Columns Name -->
+    <tr>
+      <th [pSortableColumn]="columnName" *ngFor="let columnName of tableColumns">
+        <div *ngIf="columnName!='id';else idTemplate">
+          <div class="p-d-flex p-jc-between p-ai-center text-right">
+            {{columnName}}
+            <p-sortIcon [field]="columnName"></p-sortIcon>
+          </div>
+        </div>
+        <ng-template #idTemplate>
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </ng-template>
+      </th>
+      <th></th>
+    </tr>
+    <!-- ./Columns Name -->
+    <!-- Columns Filter -->
+    <tr>
+      <th *ngFor="let columnName of tableColumns">
+        <div *ngIf="columnName!='id'">
+          <p-columnFilter type="text" [field]="columnName"></p-columnFilter>
+        </div>
+      </th>
+      <th></th>
+    </tr>
+    <!-- ./Columns Filter -->
+
+  </ng-template>
+  <ng-template pTemplate="body" let-row>
+    <tr [pSelectableRow]="row">
+      <td class="text-right" *ngFor="let columnName of tableColumns">
+        <div *ngIf="columnName != 'id';else idTemplate">
+          {{row[columnName]}}
+        </div>
+        <ng-template #idTemplate>
+          <p-tableCheckbox [value]="row"></p-tableCheckbox>
+        </ng-template>
+
+      </td>
+      <td style="width: 140px;">
+        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded  ml-2"
+          (click)="editRow(row.id)"></button>
+        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
+          (click)="deleteRow(row.id)"></button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td class="text-right" colspan="7">لا يوجد بيانات.</td>
+    </tr>
+  </ng-template>
+</p-table>

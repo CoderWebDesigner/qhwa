@@ -1,0 +1,169 @@
+<div class="dashboard__info mb-5">
+  <h6 class="text-right font-weight-bold mb-4">احصائيات عامه</h6>
+  <div class="row">
+
+    <div class="col-lg-3 col-sm-6 mb-3 text-center">
+      <div class="bg-white category p-3 shadow-sm">
+        <div class="row">
+          <div class="col-8">
+            <p class="text-gray p-0 mb-0"> الطلبات</p>
+            <div class="lg-font font-weight-bold">30</div>
+          </div>
+          <div class="col-4">
+            <div class="icon icon-1 mx-auto">
+              <i class="fas fa-user-md"></i>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-6 mb-3 text-center">
+      <div class="bg-white category p-3 shadow-sm">
+        <div class="row">
+          <div class="col-8">
+            <p class="text-gray p-0 mb-0"> المنتجات</p>
+            <div class="lg-font font-weight-bold">30</div>
+          </div>
+          <div class="col-4">
+            <div class="icon icon-2 mx-auto">
+              <i class="far fa-calendar-alt"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 mb-3 text-center">
+      <div class="bg-white category p-3 shadow-sm">
+        <div class="row">
+          <div class="col-8">
+            <p class="text-gray p-0 mb-0"> الاقسام</p>
+            <div class="lg-font font-weight-bold">30</div>
+          </div>
+          <div class="col-4">
+            <div class="icon icon-3 mx-auto">
+              <i class="fas fa-th-list"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-3 col-sm-6 mb-3 text-center">
+      <div class="bg-white category p-3 shadow-sm">
+        <div class="row">
+          <div class="col-8">
+            <p class="text-gray p-0 mb-0"> المستخدمين</p>
+            <div class="lg-font font-weight-bold">30</div>
+          </div>
+          <div class="col-4">
+            <div class="icon icon-4 mx-auto">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <h6 class="text-right font-weight-bold mb-4 ">طلبات الشهر</h6>
+    <div class="orders-per-month p-3 bg-white shadow-sm">
+      <div class="flex">
+        <div class="flex-item">
+          <div style="display: block;">
+          <canvas baseChart width="400" height="400"
+                      [data]="lineChartData"
+                      [options]="lineChartOptions"
+                      [type]="lineChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+        
+      </div>
+    
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <h6 class="text-right font-weight-bold mb-4 ">المستخدمين</h6>
+    <div class="last-users p-3 bg-white shadow-sm">
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+<h3 class="mb-4">العملات</h3>
+<div class="rounded-section bg-white shadow-lg p-3">
+  <app-table [tableData]='currenciesData' [tableColumns]="currencyColumns" (dialogType)="getDialogType($event)"></app-table>
+</div>
+
+<app-modal [title]="(type=='add'?'اضافة ':'تعديل')">
+    <div *ngIf="type == 'add';else edit">
+        <app-add></app-add>
+    </div>
+</app-modal>
+<ng-template #edit>
+    <app-edit></app-edit>
+
+</ng-template>
+

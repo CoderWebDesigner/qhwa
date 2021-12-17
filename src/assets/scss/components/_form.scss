@@ -1,0 +1,25 @@
+form{
+    label{
+        color: #828282;
+    }
+    .input-group{
+        border-radius: 10px;
+        border:1px solid #dddddd;
+        input{
+            height: 45px;
+            &:focus{
+                box-shadow: none;
+                outline: none;
+            }
+        }
+        .input-group-text{
+            color: #828282;
+        }
+    }
+    a{
+        color: #b88b70;
+        &:hover{
+           color: #b88b70;
+        }
+    }
+}

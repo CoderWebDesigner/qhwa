@@ -1,0 +1,52 @@
+ <!-- Desktop & tablet Menu -->
+
+ <div class="dashboard__container--sidemenu position-fixed col-2 p-0 border-left text-right bg-white h-100 d-lg-block d-none">
+   <!-- <div class="dashboard__header__logo text-right d-block py-3 py-md-0 ">
+     <button type="button"
+       class="lg-font dashboard__sideMenu__collapse--btn bg-transparent border-0 mx-auto mt-md-3 d-block d-lg-none">
+       <i class="fas fa-bars"></i>
+     </button>
+     <img src="imgs/Logo.png" alt="" class="d-none d-lg-block mx-auto img-fluid w-100">
+   </div> -->
+
+   <aside >
+     <ul class="px-0 pt-5">
+        <li class="px-xl-3 px-md-1 text-gray" *ngFor="let route of routes" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="{{route.icon}}"></i> <a [routerLink]="route.path"
+            href=""
+            class="p-3 d-inline-block sm-font font-weight-bold text-gray">{{route.text}}</a></li>
+     </ul>
+     <div class="sidemenu-footer">
+      <ul class="px-0">
+        <li class="px-xl-3 px-md-1 text-gray">
+          <i class="pi pi-user"></i>
+          <a href="" routerLink="users/info" class="p-3 d-inline-block sm-font font-weight-bold text-gray">الملف الشخصي</a>
+        </li>
+      </ul>
+    </div>
+   </aside>
+
+ </div>
+
+ <!-- mobile menu -->
+ <div
+   class="mobile-menu d-lg-none d-block bg-white position-fixed rounded-left text-center vh-100 border-left pt-5 " [ngClass]="{'close-menu': !openMobileMenu}">
+   <div class="mobile-menu-btn position-absolute" >
+     <button class="btn bg-white  border border-right-0 " (click)="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+   </div>
+   <aside>
+     <ul class="pr-0 pt-5 text-right">
+        <li class="pr-5  text-gray" *ngFor="let route of routes"><i class="{{route.icon}} pl-2" ></i> <a [routerLink]="route.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+           href="" class="p-3 d-inline-block sm-font font-weight-bold text-gray">{{route.text}}</a></li>
+     </ul>
+     <div class="sidemenu-footer">
+       <ul class="px-0">
+         <li class="pr-5  text-gray">
+          <i class="pi pi-user"></i>
+          <a href="" routerLink="users/info" class="p-3 d-inline-block sm-font font-weight-bold text-gray">الملف الشخصي</a>
+         </li>
+       </ul>
+     </div>
+
+   </aside>
+ </div>
+ <!-- </div> -->

@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+@import 'helpers/variables';
+@import 'helpers/fontface.mixins';
+@import 'helpers/framework';
+@import 'components/form';
+@import 'components/table';
+@import 'components/button';
+@import 'layout/header';
+@import 'pages/login';
+@import 'pages/dashboard';
+@font-face {
+    font-family: 'GE DINAR ONE';
+    font-weight: bold;
+    src: url("../fonts/GE_DINAR_ONE_MEDIUM.OTF") format("opentype");
+}
+* {
+    font-family: 'GE DINAR ONE';
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  direction: rtl;
+  text-align: right;
+
+}

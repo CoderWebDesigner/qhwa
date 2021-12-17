@@ -1,0 +1,5 @@
+<p-dialog [(visible)]="display"[breakpoints]="{'640px': '300px'}" [style]="{width: '400px'}" [draggable]="false" (onHide)="hideDialog()" [header]="title" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <ng-content></ng-content>
+    </ng-template>
+</p-dialog>

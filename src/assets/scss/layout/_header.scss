@@ -1,0 +1,143 @@
+.dashboard {
+  background: #eff4fb;
+
+  &__header {
+    left: 0;
+    z-index: 2;
+
+    &--logOutBtn {
+      .fa-sign-out-alt {
+        transform: rotate(180deg)
+      }
+    }
+  }
+
+  &__container {
+    &--sidemenu {
+      right: 0;
+      z-index: 2;
+
+      li {
+        i {
+          padding: 10px;
+          border-radius: 10px;
+          transition: all .4s ease-in-out;
+        }
+
+        &:hover {
+          i {
+            background: #b88b7040;
+            color: $mainColor !important;
+          }
+
+          a {
+            color: $mainColor !important;
+          }
+        }
+      }
+
+      li.active {
+        i {
+          background: #b88b7040;
+          color: $mainColor !important;
+        }
+
+        a {
+          color: $mainColor !important;
+        }
+      }
+
+
+    }
+
+    &--content {
+      min-height: 100vh;
+
+      .category {
+        border-radius: 10px;
+      }
+
+      .icon {
+        font-size: $mainFontSize +10;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        padding-top: 8px;
+
+        &-doctor {
+          background: rgba($mainColor, .3);
+        }
+
+        &-reservations {
+          color: $secondaryColor;
+          background: rgba($secondaryColor, .3);
+        }
+
+        &-category {
+          color: #228be6;
+          background: rgba(#228be6, .3);
+        }
+
+        &-patient {
+          color: #f0c64f;
+          background: rgba(#f0c64f, .3);
+
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  z-index: 2;
+  width: 240px;
+  right: 0;
+  transform: translateX(0);
+  transition: transform .4s ease-in-out;
+
+  &-btn {
+    top: 90px;
+    left: -39px;
+    box-shadow: 1px 1px 10px #ddd;
+  }
+  li {
+    i {
+
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+  .active {
+    i {
+      background: #b88b7040;
+      color: $mainColor !important;
+    }
+
+    a {
+      color: $mainColor !important;
+    }
+  }
+
+}
+
+.close-menu {
+  transform: translateX(240px);
+}
+
+.sidemenu-footer {
+  position: fixed;
+  bottom: 30px;
+
+  li {
+    i {
+      background: #eee;
+    }
+
+    &:hover {
+      i {
+        background: #eee;
+      }
+    }
+  }
+}

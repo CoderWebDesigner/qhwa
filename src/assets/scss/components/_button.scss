@@ -1,0 +1,37 @@
+%button {
+  height: 45px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  outline: none;
+  transition: color .4s ease-in-out, background .4s ease-in-out;
+}
+
+.dark-btn {
+  @extend %button;
+  color: #fff;
+  background: $mainColor;
+
+  &:hover {
+    color: $mainColor !important;
+    background: #fff;
+    border-color: $mainColor;
+  }
+}
+
+.p-button-icon-left {
+  margin: 0 0.5rem;
+}
+
+.p-splitbutton-menubutton {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+}
+
+.p-splitbutton-defaultbutton {
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

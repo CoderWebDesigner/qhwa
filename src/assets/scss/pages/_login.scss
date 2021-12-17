@@ -1,0 +1,29 @@
+.login {
+  position: relative;
+  height: 100vh;
+
+  &-section {
+    border-radius: 20px;
+    padding: 40px 50px;
+  }
+
+  &-img {
+    background-image: url('../../imgs/background.png');
+    background-size: cover;
+    border-radius: 20px;
+    height: 420px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: url('../../imgs/background.jpg');
+    background-size: 400px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.13;
+    z-index: -1;
+  }
+}

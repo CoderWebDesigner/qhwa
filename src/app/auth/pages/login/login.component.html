@@ -1,0 +1,45 @@
+<section class="login">
+  <div class="container">
+    <div class="row align-items-center vh-100">
+      <div class="col-lg-10 mx-auto bg-white shadow-lg login-section">
+        <div class="row">
+          <div class="col-lg-6 login-img">
+
+          </div>
+          <div class="col-lg-6 p-4">
+            <h2 class="mb-5"> تسجيل دخول</h2>
+            <div class="login-form  justify-content-center mx-auto my-sm-0 my-2">
+              <form [formGroup]="loginForm" (ngSubmit)='onSubmit()'>
+                
+                <label>اسم المستخدم</label>
+                <div class="input-group mb-4  pl-3 pr-1">
+                  <div class="input-group-prepend ">
+                    <span class="input-group-text border-0 bg-transparent" id="basic-addon1"><i
+                        class="fas fa-user text-gray"></i></span>
+                  </div>
+                  <input type="text" class="form-control border-0" formControlName="UserName" placeholder="اسم المستخدم" aria-label="Username"
+                    aria-describedby="basic-addon1">
+                </div>
+                <div class="d-flex">
+                    <label for="">كلمة المرور</label>
+                    <a href="" class="mr-auto" routerLink="../forgetpassword"> نسيت كلمه المرور؟</a>
+                </div>
+                
+                <div class="input-group mb-4  pl-3 pr-1">
+                  <div class="input-group-prepend ">
+                    <span class="input-group-text border-0 bg-transparent" id="basic-addon1"><i
+                        class="fas fa-lock text-gray"></i></span>
+                  </div>
+                  <input type="password" class="form-control border-0" formControlName="Password" placeholder="كلمه المرور" aria-label="Password"
+                    aria-describedby="basic-addon1">
+                </div>
+                <div class="submit"><input type="submit" class="dark-btn text-light px-5" value="تسجيل الدخول">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

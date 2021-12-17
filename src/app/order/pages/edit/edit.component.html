@@ -1,0 +1,33 @@
+<form [formGroup]="editOrderForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">الاسم الاول</label>
+      <input type="text " class="form-control" id="name" aria-describedby="namehelp" formControlName="name">
+      <div
+        *ngIf="editOrderForm.controls['name'].invalid && (editOrderForm.controls['name'].dirty || editOrderForm.controls['name'].touched)">
+        <div id="namehelp" class="form-text text-danger" *ngIf="editOrderForm.controls['name'].errors?.required">هذا
+          الحقل مطلوب.</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="lastname" class="form-label">الاسم الاخير</label>
+      <input type="text " class="form-control" id="lastname" aria-describedby="lastnamehelp" formControlName="lastname">
+      <div
+        *ngIf="editOrderForm.controls['name'].invalid && (editOrderForm.controls['name'].dirty || editOrderForm.controls['name'].touched)">
+        <div id="lastnamehelp" class="form-text text-danger"
+          *ngIf="editOrderForm.controls['lastname'].errors?.required">هذا الحقل مطلوب.</div>
+      </div>
+  
+    </div>
+    <div class="mb-3">
+      <label for="age" class="form-label">العمر</label>
+      <input type="text " class="form-control" id="age" aria-describedby="agehelp" formControlName="age">
+      <div
+        *ngIf="editOrderForm.controls['name'].invalid && (editOrderForm.controls['name'].dirty || editOrderForm.controls['name'].touched)">
+        <div id="agehelp" class="form-text text-danger" *ngIf="!editOrderForm.controls['age'].errors?.required">هذا
+          الحقل مطلوب.</div>
+      </div>
+  
+    </div>
+    <button type="submit" class="btn btn-primary">حفظ</button>
+  </form>
+  

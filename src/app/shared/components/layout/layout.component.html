@@ -1,0 +1,30 @@
+<div class="dashboard ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2">
+
+        <app-sidebar></app-sidebar>
+      </div>
+      <!-- Content -->
+      <div class="col-lg-10 col-12">
+          <!-- Header -->
+        <!-- <div class="dashboard__header position-fixed bg-white col-lg-10 border-bottom">
+          <div class="dashboard__header__logout text-left  py-4">
+            <span class="d-inline-block dashboard__header__userName">مدير النظام</span>
+            <button class="dashboard__header--logOutBtn bg-transparent border-0  px-4 ml-2  position-relative">
+              <i class="fas fa-sign-out-alt text-gray lg-font"></i>
+            </button>
+          </div>
+        </div> -->
+        <!-- Body -->
+        <div class="dashboard__container--content mr-md-3 py-5">
+
+          <router-outlet></router-outlet>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
